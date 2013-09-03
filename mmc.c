@@ -78,10 +78,10 @@ BYTE wait_ready (void)
 
 
 	rcv_spi();
-	tmr = 2500;
+	tmr = 25000;
 	do
 		res = rcv_spi();
-	while (res != 0xFF && tmr);
+	while (res != 0xFF && --tmr);
 
 	return res;
 }
